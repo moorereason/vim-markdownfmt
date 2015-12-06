@@ -14,10 +14,10 @@ Installation
 If you use [Vundle](https://github.com/gmarik/vundle), add the following to your `vimrc`:
 
 ```vim
-Plugin 'moorereason/markdownfmt'
+Plugin 'moorereason/vim-markdownfmt'
 ```
 
-The install with:
+Then install with:
 
 ```vim
 :PluginInstall
@@ -45,10 +45,11 @@ let g:markdownfmt_command = 'markdownfmt'
 
 ### Command Options
 
-Define options to be passed to command executable.  Default is `-w`.
+Define options to be passed to command executable.  Default is empty.  Note that
+`-w` is *always* passed as an option.
 
 ```vim
-let g:markdownfmt_options = '-w'
+let g:markdownfmt_options = ''
 ```
 
 ### Fail Silently
