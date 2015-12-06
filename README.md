@@ -1,7 +1,7 @@
 vim-markdownfmt
 ===============
 
-Markdown formatting plugin for Vim. Designed to work with "gofmt-style" commands such as[markdownfmt](https://github.com/shurcooL/markdownfmt).<!-- and [mdfmt](https://github.com/moorereason/mdfmt). -->
+Markdown formatting plugin for Vim. Designed to work with "gofmt-style" commands such as [markdownfmt](https://github.com/shurcooL/markdownfmt).
 
 Installation
 ------------
@@ -67,10 +67,10 @@ let g:markdownfmt_fail_silently=0
 Key Bindings
 ------------
 
-If you decide to disable the autosave feature, you can use the `<Plug>(markdownfmt-format)` command in your key bindings to format and save the current buffer. For example:
+If you decide to disable the autosave feature, you can use the following command in your key bindings to format and save the current buffer.
 
 ```vim
-au FileType markdown nmap <leader>s <Plug>(markdownfmt-format)
+au FileType markdown nmap <leader>s :<C-u>call markdownfmt#Format()<CR>
 ```
 
 Credits
