@@ -13,17 +13,6 @@
 "       Filter the current Markdown buffer through markdownfmt.
 "       It tries to preserve cursor position and avoids
 "       replacing the buffer with stderr output.
-"
-" Options:
-"
-"   g:markdownfmt_command [default="markdownfmt"]
-"
-"       Flag naming the markdownfmt executable to use.
-"
-"   g:markdownfmt_fail_silently [default=0]
-"
-"       Flag to cault :Fmt to fail silently
-"
 
 if !exists("g:markdownfmt_command")
     let g:markdownfmt_command = "markdownfmt"
@@ -35,10 +24,6 @@ endif
 
 if !exists('g:markdownfmt_options')
     let g:markdownfmt_options = ''
-endif
-
-if !exists("g:markdownfmt_experimental")
-    let g:markdownfmt_experimental = 0
 endif
 
 "  we have those problems :
@@ -56,15 +41,6 @@ function! markdownfmt#Format()
     " Write current unsaved buffer to a temp file
     let l:tmpname = tempname()
     call writefile(getline(1, '$'), l:tmpname)
-
-    if g:markdownfmt_experimental == 1
-        " save our undo file to be restored after we are done. This is needed to
-        " prevent an additional undo jump due to BufWritePre auto command and also
-        " restore 'redo' history because it's getting being destroyed every
-        " BufWritePre
-        let tmpundofile=tempname()
-        exe 'wundo! ' . tmpundofile
-    endif
 
     " get the command first so we can test it
     let fmt_command = g:markdownfmt_command
@@ -121,12 +97,6 @@ function! markdownfmt#Format()
 
         " We didn't use the temp file, so clean up
         call delete(l:tmpname)
-    endif
-
-    if g:markdownfmt_experimental == 1
-        " restore our undo history
-        silent! exe 'rundo ' . tmpundofile
-        call delete(tmpundofile)
     endif
 
     " restore our cursor/windows positions

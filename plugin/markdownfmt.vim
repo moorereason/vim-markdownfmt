@@ -5,6 +5,6 @@ augroup markdownfmt
 
     " code formatting on save
     if get(g:, "markdownfmt_autosave", 1)
-        autocmd BufWritePre *.md call markdownfmt#Format()
+        autocmd BufWritePre *.md *.markdown call markdownfmt#Format()
     endif
 augroup END

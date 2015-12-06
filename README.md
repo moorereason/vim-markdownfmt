@@ -1,10 +1,6 @@
-vim-markdownfmt
-===============
+# vim-markdownfmt
 
-Markdown formatting plugin for Vim.  Designed to work with "gofmt-style"
-commands such as [markdownfmt](https://github.com/shurcooL/markdownfmt).
-
-<!-- and [mdfmt](https://github.com/moorereason/mdfmt). -->
+Markdown formatting plugin for Vim. Designed to work with "gofmt-style" commands such as[markdownfmt](https://github.com/shurcooL/markdownfmt).<!-- and [mdfmt](https://github.com/moorereason/mdfmt). -->
 
 Installation
 ------------
@@ -32,12 +28,12 @@ cd ~/.vim/bundle
 git clone https://github.com/moorereason/vim-markdownfmt.git
 ```
 
-## Options
+Options
+-------
 
 ### Command Executable
 
-Define which "fmt" executable you want to use.  It must be in your PATH.
-Default is `markdownfmt`.
+Define which "fmt" executable you want to use. It must be in your PATH. Default is `markdownfmt`.
 
 ```vim
 let g:markdownfmt_command = 'markdownfmt'
@@ -45,28 +41,44 @@ let g:markdownfmt_command = 'markdownfmt'
 
 ### Command Options
 
-Define options to be passed to command executable.  Default is empty.  Note that
-`-w` is *always* passed as an option.
+Define options to be passed to command executable. Default is empty. Note that `-w` is *always* passed as an option.
 
 ```vim
 let g:markdownfmt_options = ''
 ```
 
+### Autosave
+
+Set whether to automatically run format command on save. Default is `1`.
+
+```vim
+let g:markdownfmt_autosave=1
+```
+
 ### Fail Silently
 
-Set whether you want to fail silently (1) or show errors (0).
-Default is 0 (show errors).
+Set whether to fail silently (1) or show errors (0). Default is 0 (show errors).
 
 ```vim
 let g:markdownfmt_fail_silently=0
 ```
 
-## Credits
+## Key Bindings
 
-* The Go Authors for their `gofmt` Vim plugin.
-* [vim-go Contributors](https://github.com/fatih/vim-go/graphs/contributors) for inspiration.
-* [Contributors](https://github.com/moorereason/vim-markdownfmt/graphs/contributors) of vim-markdownfmt.
+If you decide to disable the autosave feature, you can use the `<Plug>(markdownfmt-format)` command in your key bindings to format the current buffer.  For example:
 
-## License
+```vim
+au FileType markdown nmap <leader>f <Plug>(markdownfmt-format)
+```
 
-MIT License.  See file `LICENSE` for more details.
+Credits
+-------
+
+-	The Go Authors for their `gofmt` Vim plugin.
+-	[vim-go Contributors](https://github.com/fatih/vim-go/graphs/contributors) for inspiration.
+-	[Contributors](https://github.com/moorereason/vim-markdownfmt/graphs/contributors) of vim-markdownfmt.
+
+License
+-------
+
+MIT License. See file `LICENSE` for more details.
