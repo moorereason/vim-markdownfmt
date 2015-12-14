@@ -1,7 +1,7 @@
 vim-markdownfmt
 ===============
 
-Markdown formatting plugin for Vim. Designed to work with "gofmt-style" commands such as [markdownfmt](https://github.com/shurcooL/markdownfmt).
+Markdown formatting plugin for Vim. Designed to work with "gofmt-style" commands such as [markdownfmt](https://github.com/shurcooL/markdownfmt) and [mdfmt](https://github.com/moorereason/mdfmt).
 
 Installation
 ------------
