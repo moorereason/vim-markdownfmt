@@ -50,10 +50,10 @@ let g:markdownfmt_options = ''
 
 ### Autosave
 
-Set whether to automatically run format command on save. Default is `1`.
+Set whether to automatically run format command on save. Default is `0`.
 
 ```vim
-let g:markdownfmt_autosave=1
+let g:markdownfmt_autosave=0
 ```
 
 ### Fail Silently
@@ -67,7 +67,7 @@ let g:markdownfmt_fail_silently=0
 Key Bindings
 ------------
 
-If you decide to disable the autosave feature, you can use the following command in your key bindings to format and save the current buffer.
+If you decide to leave the autosave feature disabled, you can use a command like the following to format and save the current buffer.
 
 ```vim
 au FileType markdown nmap <leader>s :<C-u>call markdownfmt#Format()<CR>
