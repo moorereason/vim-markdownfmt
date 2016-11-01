@@ -101,6 +101,7 @@ function! markdownfmt#Format()
 
     " restore our cursor/windows positions
     call winrestview(l:curw)
+    norm zv
 endfunction
 
 " vim:ts=4:sw=4:et
