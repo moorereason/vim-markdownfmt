@@ -50,7 +50,7 @@ function! markdownfmt#Format()
         return
     end
     " populate the final command with user based fmt options
-    let command = fmt_command . ' -w '
+    let command = fmt_command . ' -w ' . g:markdownfmt_options
 
     " execute our command...
     let out = system(command . " " . l:tmpname)
